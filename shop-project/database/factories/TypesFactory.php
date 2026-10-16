@@ -6,6 +6,7 @@ use App\Models\product;
 use App\Models\types;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Nette\Utils\Type;
 
 use function Illuminate\Support\years;
 
@@ -26,4 +27,5 @@ class TypesFactory extends Factory
             'description'=>fake()->sentence()
             ];
     }
+    
 }

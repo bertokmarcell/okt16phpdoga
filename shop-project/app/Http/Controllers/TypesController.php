@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\types;
 use App\Http\Requests\StoretypesRequest;
 use App\Http\Requests\UpdatetypesRequest;
+use Nette\Utils\Type;
 
 class TypesController extends Controller
 {
@@ -13,7 +14,6 @@ class TypesController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**

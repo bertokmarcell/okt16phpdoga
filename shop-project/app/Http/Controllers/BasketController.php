@@ -13,7 +13,7 @@ class BasketController extends Controller
      */
     public function index()
     {
-        //
+        basket::with('shop-project')->get();
     }
 
     /**
@@ -21,7 +21,7 @@ class BasketController extends Controller
      */
     public function create()
     {
-        //
+        basket::create();
     }
 
     /**
@@ -29,7 +29,8 @@ class BasketController extends Controller
      */
     public function store(StorebasketRequest $request)
     {
-        //
+        $validated =$request;
+        Basket::create($validated);
     }
 
     /**
@@ -37,7 +38,7 @@ class BasketController extends Controller
      */
     public function show(basket $basket)
     {
-        //
+        return $basket->load('shop-project');
     }
 
     /**
@@ -53,7 +54,8 @@ class BasketController extends Controller
      */
     public function update(UpdatebasketRequest $request, basket $basket)
     {
-        //
+        $validated =$request->validate('time');
+        $basket->update($validated);
     }
 
     /**
@@ -61,6 +63,6 @@ class BasketController extends Controller
      */
     public function destroy(basket $basket)
     {
-        //
+        $basket->delete();
     }
 }

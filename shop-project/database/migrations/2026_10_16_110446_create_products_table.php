@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('description');
             $table->integer('price');
             $table->foreignId('type_id')->constrained()->cascade();
-
             $table->timestamps();
         });
     }
@@ -29,4 +28,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('products');
     }
+    
 };

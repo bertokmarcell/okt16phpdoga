@@ -17,4 +17,5 @@ class types extends Model
             'description' => 'string',
         ];
     }
+    
 }
