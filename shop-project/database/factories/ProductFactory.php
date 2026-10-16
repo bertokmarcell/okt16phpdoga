@@ -21,8 +21,8 @@ class ProductFactory extends Factory
     {
         return [
             'time' => now(),
-            'type_id'=>types::all(),
-            'name'=> fake()->colorName(),
+            'type_id'=>types::all()->random(),
+            'name'=> fake()->Name(),
             'description'=>fake()->sentence(),
             'price'=>random_int(200,70000)
 

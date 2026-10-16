@@ -13,10 +13,6 @@ use Nette\Utils\Type;
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
         User::factory(10)->create();
@@ -25,25 +21,19 @@ class DatabaseSeeder extends Seeder
         types::factory(10)->create();
 
 
-        User::factory()->create([
+        basket::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+
         ]);
         User::factory()->create([
             'name' => 'Test User55555',
             'email' => 'test@example.com',
         ]);
+        User::factory()->create([
+            'name' => 'it cant see',
+            'email' => 'test@example.com',
+        ]);
         product::factory()->create([
-            'name' => '2020-10-10',
-            'description'=>'sdf',
-            'price'=>'500'
-        ]);
-        Basket::factory()->create([
-            'name' => '2020-10-10',
-            'description'=>'sdf',
-            'price'=>'500'
-        ]);
-        types::factory()->create([
             'name' => '2020-10-10',
             'description'=>'sdf',
             'price'=>'500'

@@ -13,7 +13,7 @@ class BasketController extends Controller
      */
     public function index()
     {
-        basket::with('shop-project')->get();
+        basket::with('basket')->get();
     }
 
     /**
@@ -38,7 +38,7 @@ class BasketController extends Controller
      */
     public function show(basket $basket)
     {
-        return $basket->load('shop-project');
+        return $basket->load('basket');
     }
 
     /**

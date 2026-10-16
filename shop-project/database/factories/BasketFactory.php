@@ -20,7 +20,7 @@ class BasketFactory extends Factory
     public function definition(): array
     {
         return [
-            'time' => now(),
+            'time' => Fake()->date(2020-10-10,2026-10-10),
             'product_id'=>product::all()->random(),
             'user_id'=>User::all()->random()
         ];

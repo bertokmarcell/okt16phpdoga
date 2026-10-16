@@ -13,6 +13,6 @@ Route::get('/baskets',[ControllersBasketController::class,'index']);
 Route::get('/products',[ProductController::class,'show']);
 Route::put('/products',[ProductController::class,'store']);
 Route::get('/products/{product}',[ProductController::class,'index']);
-Route::put('/products/{produts}',[ProductController::class,'update']);
+Route::put('/products/{produt}',[ProductController::class,'update']);
 Route::delete('/products/{product}',[ProductController::class,'destroy']);
 

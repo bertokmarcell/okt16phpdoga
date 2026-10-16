@@ -13,7 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        product::with('product')->get();
     }
 
     /**
@@ -21,7 +21,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        product::create();
     }
 
     /**
@@ -29,7 +29,8 @@ class ProductController extends Controller
      */
     public function store(StoreproductRequest $request)
     {
-        //
+        $validated =$request;
+        product::create($validated);
     }
 
     /**
@@ -37,7 +38,7 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        //
+        return $product->load('basket');
     }
 
     /**
@@ -45,7 +46,7 @@ class ProductController extends Controller
      */
     public function edit(product $product)
     {
-        //
+        
     }
 
     /**
@@ -53,7 +54,8 @@ class ProductController extends Controller
      */
     public function update(UpdateproductRequest $request, product $product)
     {
-        //
+        $validated =$request->validate('time');
+        $product->update($validated);
     }
 
     /**
@@ -61,6 +63,6 @@ class ProductController extends Controller
      */
     public function destroy(product $product)
     {
-        //
+        $product->delete();
     }
 }

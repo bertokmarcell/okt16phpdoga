@@ -13,8 +13,7 @@ class basket extends Model
     protected function casts(): array
     {
         return [
-            'time' => 'datetime',
-            
+            'time' => 'datetime',  
         ];
     }
 }
